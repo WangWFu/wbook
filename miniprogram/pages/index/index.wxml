@@ -1,0 +1,38 @@
+<!-- 搜索区域 -->
+<view class='search-area'>
+  <input placeholder='请输入书名/关键字' bindinput='textinput'></input>
+  <icon type="search" size="18" color="#666666" bindtap='searcher'/>
+</view>
+<!-- 轮播图 -->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+<!--  -->
+<!-- <view class='box'>
+<view class='text'>我要借阅</view>
+<view class='text1'>我要分享</view>
+</view> -->
+<view class="header-type" id="header-special">
+  <image src="/images/hot.png" class="header-icon"></image>
+  <text>热门推荐:</text>
+</view>
+<block>
+<navigator url='../bookdetail/bookdetail'>
+  <view class='content'>
+    <image src='/images/1.png'></image>
+    <view class='content-left'>
+      <text class='bookname'>aaa</text>
+      <text class='bookdeail'>knidfekmosmfeflflgeinosndweinsdfefeegggegegegegegeshhhhhhh</text>
+      <text>分享者:</text>
+    </view>
+  </view>
+  </navigator>
+</block>
+<view bindtap='Publish'>
+    <image class='icon-publish' src='/images/publish.png'></image>
+</view>

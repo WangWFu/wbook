@@ -1,0 +1,14 @@
+<view class='title'>
+    <!-- <image src='/images/point.png'></image> -->
+    <text>图书分类</text>
+</view>
+<block wx:for="{{collegeInfo}}" wx:for-item="item" wx:key="{{index}}">
+    <view class='college' bindtap='onJumpPublish' data-college-id="{{item.collegeId}}">{{item.collegeName}}</view>
+</block>
+<!-- <navigator url='./child/child'>
+<button>手动上传</button>
+</navigator>
+<navigator url='./second/second'>
+<button>扫码上传</button>
+</navigator> -->
+

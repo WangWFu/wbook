@@ -1,0 +1,12 @@
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view> 
+
+
+ <!-- <view class="tab">
+    <template is="zan-tab" data="{{tab: tab1, componentId: 'tab1'}}"></template>
+  </view> -->
+<view class="tab-content1" >
+<image class="tab-image" src="/images/jilu.png"></image>
+<text>您还没有相关记录哦！</text>
+</view>

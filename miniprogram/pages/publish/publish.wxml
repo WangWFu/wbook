@@ -1,0 +1,19 @@
+<form bindsubmit="formSubmit">
+    <view class='detail-container'>
+        <text class='heading'>图书名字:</text>
+        <input class='introduce' bindinput="title" type='text' placeholder="请输入信息" value=''></input>
+
+        <text class='heading'>图书详情:</text>
+        <textarea bindinput="details" placeholder='请输入详情介绍' class='introduce' value=''></textarea>
+        <view class='img-box'>
+            <image src='{{imgSrc}}' class='litimg' wx:if="{{isImage}}" bindtap='perviewImg'></image>
+            <view class='add-box' bindtap='chooseImg'>
+                <image src='/images/add.png' class='add-img'></image>
+            </view>
+        </view>
+    </view>
+    <view class='submit'>
+        <button form-type='submit' type='primary'>分享图书</button>
+    </view>
+</form>
+

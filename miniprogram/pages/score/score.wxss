@@ -1,0 +1,23 @@
+/* miniprogram/pages/score/score.wxss */
+.content{
+  margin: 0 auto;
+}
+.test{
+  margin: 120rpx 0;
+  color: #999;
+  text-align: center
+}
+.fn{
+    margin: 0 auto;
+    width: 200rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    border: 1px solid #47a86c;
+    color: #47a86c;
+}
+.fn:active{
+   background-color: #47a86c;
+    color: #fff;
+}

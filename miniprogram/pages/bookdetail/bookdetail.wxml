@@ -1,0 +1,99 @@
+<!--miniprogram/pages/bookdetail/bookdetail.wxml-->
+<view class="container">
+    <block wx:if="{{showLoading}}">
+        <view class="loading">玩命加载中…</view>
+    </block>
+    <block wx:elif="{{isShowContentMsg}}">
+        <view>{{showContentMsg}}</view>
+    </block>
+    <block>
+    <!-- fd: film detail -->
+        <view class="fd-hd">
+            <view class="fd-hd-bg"></view>
+            <image src="https://img3.doubanio.com/view/subject/l/public/s5804746.jpg" class="fd-cover"></image>
+            <view class="fd-intro">
+                <view class="fd-title">论语{{bookDetail.title}}</view>
+                <view class="fd-intro-txt">作者：{{bookDetail.author[0]}}</view>
+                <view class="fd-intro-txt">出版社：{{bookDetail.publisher}}</view>
+                <view class="fd-intro-txt">豆瓣评分：
+                    <block wx:if="{{bookDetail.rating.average == 0}}">
+                        暂无评分
+                    </block>
+                    <block wx:else>
+                        {{bookDetail.rating.average}}分
+                    </block>
+                </view>
+                <view class="fd-intro-txt">出版日期：{{bookDetail.pubdate}}</view>
+            </view>
+            <view class="fd-book-button">
+            <view class="fd-favorite {{isBookFavorite ? 'fd-favorite-active' : ''}}" bindtap="managebook">收藏</view>
+            <block >
+              <view class="fd-sharebook" data-id="{{bookDetail.bookId}}"  data-name="{{bookDetail.title}}"  bindtap="viewebookshare" >借书</view>
+            </block>
+            <!-- <block wx:if="{{bookDetail.ShareBook}}">
+              <view class="fd-sharebook" data-id="{{bookDetail.bookId}}"  data-name="{{bookDetail.title}}"  bindtap="shareBooklist" >纸质书</view>
+            </block> -->
+            </view>
+        </view>
+        <view class="fd-data">
+            <view class="fd-data-item">
+                <view class="fd-data-num">{{bookDetail.HaveReadCount}}</view>
+                <view class="fd-data-title">读过</view>
+            </view>
+            <view class="fd-data-item">
+                <view class="fd-data-num">{{bookDetail.WantReadCount}}</view>
+                <view class="fd-data-title">可借书</view>
+            </view>
+            <view class="fd-data-item">
+                <view class="fd-data-num" data-id="{{bookDetail.bookId}}"  data-name="{{bookDetail.title}}"  bindtap="shareBooklist">{{bookDetail.ShareBookCount}}</view>
+                <view class="fd-data-title" data-id="{{bookDetail.bookId}}"  data-name="{{bookDetail.title}}"  bindtap="shareBook">分享</view>
+            </view>
+        </view>
+        <view class="fd-bd">
+            <view class="fd-bd-title">内容简介</view>
+            <view class="fd-bd-intro">{{bookDetail.summary}}</view>
+            <view class="fd-bd-title">作者简介</view>
+            <view class="fd-bd-intro">{{bookDetail.author_intro}}</view>
+            <view class="fd-bd-title">分享该书的书友</view>
+            <view class="fd-bd-shareperson-area">
+              <view class="fd-bd-sharebook-person">
+                <block wx:for="{{bookCanshareList}}" wx:for-item="bookCanshareItem" wx:key="bookCanshareItem">
+                  <view class="fd-bd-sharebook-person-item">{{bookCanshareItem.username}}</view>
+                </block>
+              </view>
+              <block wx:if="{{bookCanshareList.length>0}}">
+                <view class="fd-bd-sharebook-person-more" data-id="{{bookDetail.bookId}}"  data-name="{{bookDetail.title}}"  bindtap="shareBooklist">
+                  更多>
+                </view>
+              </block>
+            </view>
+            <view class="fd-bd-tag">
+            </view>
+            <view class="fd-bd-title">评论</view>
+            <!-- <view class="fd-bd-person">
+                <block wx:for="{{similarBookList}}" wx:for-item="similarBookItem" wx:key="similarBookItem">
+                    <view class="fd-bd-person-item" data-doubanId="{{similarBookItem.bookDoubanId}}" bindtap="viewBookDetail">
+                        <image class="fd-bd-person-avatar" src="{{similarBookItem.bookImage}}"></image>
+                        <view class="fd-bd-person-name">{{similarBookItem.bookName}}</view>
+                        <view class="fd-bd-person-role">{{similarBookItem.bookAuthor}}</view>
+                    </view>
+                </block>
+            </view> -->
+              <view class='comment-group'>
+        <text class='comment-group-title'>评论</text>
+        <!-- <block wx:for="{{comments}}" wx:for-item="item" wx:key="{{index}}">
+            <template is="commentsItem" data="{{...item}}" />
+        </block> -->
+              </view>
+          <view class='comment-cue'>没有更多评论了...</view>
+          <view class='bottom'>
+    <view class='input-group'>
+        <image src='/images/edit.png' class='icon-edit'></image>
+        <input type="text" value="{{inputText}}" placeholder="写评论..." bindconfirm="onBindConfirm"></input>
+    </view>
+   
+    
+</view>
+        </view>
+    </block> 
+</view>

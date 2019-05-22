@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/bookstation/bookstation",
+    "pages/index/bookself/bookself",
+    "pages/index/mine/mine",
+    "pages/index/borrowlist/borrowlist",
+    "pages/bookdetail/bookdetail",
+    "pages/index/mycollection/mycollection",
+    "pages/score/score",
+    "pages/bookshare/bookshare",
+    "pages/money/money",
+    "pages/publish/publish"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "book",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_s.png"
+      },
+      {
+        "pagePath": "pages/index/bookstation/bookstation",
+        "iconPath": "/images/bookbag.png",
+        "text": "图书小站",
+        "selectedIconPath": "images/bookbag_s.png"
+      },
+      {
+        "pagePath": "pages/index/bookself/bookself",
+        "text": "书架",
+        "iconPath": "/images/bookshelf.png",
+        "selectedIconPath": "images/bookshelf_s.png"
+      },
+      {
+        "pagePath": "pages/index/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "images/my_s.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

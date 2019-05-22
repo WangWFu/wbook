@@ -1,0 +1,75 @@
+
+<!-- <image src='/images/bg.png'></image> -->
+  <view class="userinfo" style="background-image: url(/images/bg.png)">
+    <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
+    <view class="userinfo-nickname">{{nickName}}
+     <block wx:if="{{gender == 1}}">
+                <view class="user-sex-male"></view>
+            </block>
+            <block wx:elif="{{gender == 2}}">
+                <view class="user-sex-female"></view>
+            </block>
+    </view>
+    <!-- <image src="" class="account-bg"></image> -->
+  </view>
+
+  <view class="separate"></view>
+  <navigator url='../borrowlist/borrowlist'>
+  <view class="order" catchtap="toOrder">
+    <text class="myorder-text">借书记录</text>
+    <text class="myorderlook-text">查看全部记录</text>
+    <image class="next-image" src="/images/tiaozhuan.png"></image>
+  </view>
+  </navigator>
+  <!-- <view class="person-line"></view> -->
+  <view class="navs">
+    <block wx:for-items="{{orderItems}}" wx:key="name">
+      <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+        <image src="{{item.imageurl}}" class="nav-image" />
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="separate"></view>
+  <view class="person-list">
+  <navigator url='../mycollection/mycollection'>
+    <view class="list-item">
+      <image class="item-image" src="/images/shoucang.png"></image>
+      <text class="item-text">我的收藏</text>
+    </view>
+    </navigator>
+    <view class="person-line"></view>
+    <navigator url='../../score/score'>
+    <view class="list-item">
+      <image class="item-image" src="/images/dingwei.png"></image>
+      <text class="item-text">会员积分</text>
+    </view>
+    </navigator>
+    <view class="person-line"></view>
+    <navigator url='../../bookshare/bookshare'>
+    <view class="list-item">
+      <image class="item-image" src="/images/yuedu.png"></image>
+      <text class="item-text">我要分享</text>
+    </view>
+    </navigator>
+    <view class="person-line"></view>
+    <navigator url='../../money/money'>
+    <view class="list-item">
+      <image class="item-image" src="/images/pingjia.png"></image>
+      <text class="item-text">我的押金</text>
+    </view>
+    </navigator>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="/images/fenxiang.png"></image>
+      <text class="item-text">推广邀请</text>
+    </view>
+     <view class="person-line"></view>
+     <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
+  </view>
+  <!-- <view class="separate"></view> -->
+
+

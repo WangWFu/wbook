@@ -1,0 +1,109 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"appid": "wx9ff42dddf6423735",
+	"projectname": "book",
+	"libVersion": "2.7.0",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mine",
+					"pathName": "pages/index/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bookdetail",
+					"pathName": "pages/bookdetail/bookdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "coll",
+					"pathName": "pages/index/mycollection/mycollection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "score",
+					"pathName": "pages/score/score",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/bookshare/second/second",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bookself",
+					"pathName": "pages/index/bookself/bookself",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bookself",
+					"pathName": "pages/index/bookself/bookself",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bookshare",
+					"pathName": "pages/bookshare/bookshare",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

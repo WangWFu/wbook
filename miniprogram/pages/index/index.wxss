@@ -1,0 +1,120 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+	.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+  .search-area {
+    padding: 12.5rpx 15rpx 12.5rpx 15rpx;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 5px;
+    height: 30px;
+}
+ .search-area input {
+    width: 450rpx;
+    height: 20rpx;
+    line-height: 20rpx;
+    display: inline-block;
+    padding-left: 0rpx;
+    font-size: 25rpx;
+}
+.search-area icon {
+    display: inline-block;
+    float: right;
+    margin-right: 10rpx;
+    margin-top: 2px;
+}
+  /* .box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+    border: 1px solid #000;
+    height: 100px;
+    background: #fff;
+    border-radius: 5px;
+  }
+  .text{
+    border: 1px solid #000;
+    width: 40%;
+    height: 50px;
+   padding: 30rpx 10rpx;
+   box-sizing: border-box;
+   text-align: center;
+   border-radius: 5px;
+   background: #89479B;
+  }
+  .text1{
+    border: 1px solid #000;
+    width: 40%;
+    height: 50px;
+   padding: 30rpx 10rpx;
+   box-sizing: border-box;
+   text-align: center;
+   border-radius: 5px;
+   background: #89479B;
+  } */
+  #header-special {
+  border-top: none;
+}
+
+.header-type {
+  font-family: "微软雅黑";
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 25rpx;
+  border-top: solid lightgray 1rpx;
+  border-bottom: solid lightgray 1rpx;
+}
+
+.header-icon {
+  height: 37rpx;
+  width: 37rpx;
+  position: relative;
+  top: 3.5rpx;
+}
+
+.header-type text {
+  position: relative;
+  color: #333;
+  left: 10rpx;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 20rpx;
+  position: relative;
+}
+.content image{
+  width: 200rpx;
+  height: 220rpx;
+}
+.content .bookname{
+  font-size: 20px;
+}
+ .content-left{
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  font-size: 16px;
+}
+.bookdeail{
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.icon-publish{
+    width: 120rpx;
+    height: 120rpx;
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 100;
+}
