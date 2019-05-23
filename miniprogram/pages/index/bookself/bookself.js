@@ -8,7 +8,7 @@ Page({
     cateItems: [
       {
         cate_id: 1,
-        cate_name: "文化艺术类",
+        cate_name: "哲学类",
         ishaveChild: true,
         children:
           [
@@ -36,7 +36,7 @@ Page({
       },
       {
         cate_id: 2,
-        cate_name: "计算机类",
+        cate_name: "经济类",
         ishaveChild: true,
         children:
           [
@@ -84,7 +84,7 @@ Page({
       },
       {
         cate_id: 3,
-        cate_name: "小说与散文",
+        cate_name: "文学类",
         ishaveChild: true,
         children:
           [
@@ -112,7 +112,25 @@ Page({
       },
       {
         cate_id: 4,
-        cate_name: "漫画与绘本",
+        cate_name: "艺术类",
+        ishaveChild: false,
+        children: []
+      },
+      {
+        cate_id: 5,
+        cate_name: "工业技术类",
+        ishaveChild: false,
+        children: []
+      },
+      {
+        cate_id: 6,
+        cate_name: "小说类",
+        ishaveChild: false,
+        children: []
+      },
+      {
+        cate_id: 7,
+        cate_name: "学习资料类",
         ishaveChild: false,
         children: []
       }
@@ -130,6 +148,7 @@ Page({
       curNav: id,
       curIndex: index
     })
+    console.log(e.target.dataset.id);
   },
   /**
    * 生命周期函数--监听页面加载

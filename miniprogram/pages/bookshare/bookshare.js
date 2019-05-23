@@ -7,25 +7,29 @@ Page({
   data: {
     collegeInfo: [
       {
-        collegeName: '计算机',
+        collegeName: '哲学',
         collegeId:1
        },
       {
-        collegeName: '计算机',
+        collegeName: '经济',
         collegeId: 2
       },
       {
-        collegeName: '计算机',
+        collegeName: '文学',
         collegeId: 3
       }, {
-        collegeName: '计算机',
+        collegeName: '艺术',
         collegeId: 4
       }, {
-        collegeName: '计算机',
+        collegeName: '工业技术',
         collegeId: 5
       }, {
-        collegeName: '计算机',
+        collegeName: '小说',
         collegeId: 6
+      },
+      {
+        collegeName: '学习资料',
+        collegeId: 7
       }
     ]
       

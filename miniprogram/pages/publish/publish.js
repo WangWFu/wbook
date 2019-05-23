@@ -9,7 +9,8 @@ Page({
   data: {
     imgSrc: [], //临时存放图片目录的空数组,
     collegeId: 0,
-    userInfo: {},
+    avatarUrl:'',
+    nickName:'',
     isImage: false,
     title:'',
     details:''
@@ -28,12 +29,37 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //console.log(app.data.avatarUrl)
     console.log(options.collegeId);
-    console.log(userInfo);
-    this.setData({
+    var that = this;
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function (res) {
+              const db = wx.cloud.database();
+              db.collection('user').get({
+                data: {
+                  openid: getApp().globalData.openid
+                }, success: function (res) {
+                  console.log(res.data[0].avatarUrl);
+                  that.setData({
+                    avatarUrl: res.data[0].avatarUrl,
+                    nickName: res.data[0].nickName,
+                    gender: res.data[0].gender
+                  })
+                  //console.log(this.data.avatarUrl)
+                }
+              })
+            }
+          });
+        }
+      }
+    })
+      this.setData({
       collegeId: options.collegeId, //选中的学院的编号
-      userInfo: getApp().globalData.userInfo
-    });
+    })
   },
   //选择本地图片
   chooseImg: function () {
@@ -80,41 +106,100 @@ Page({
       }
     })
   },
-
+  //发布
   formSubmit: function (e) {
     var that = this;
     wx.showLoading({
       title: '上传中loading...'
     });
-    //name: 'file',
+    //上传信息
     var formData={
       title: that.data.title,
-        details: that.data.details,
-      author: that.data.userInfo.nickName,
-            collegeId: that.data.collegeId,
+      details: that.data.details,
+      author: that.data.nickName,
+      avatarUrl:that.data.avatarUrl,
+      collegeId: that.data.collegeId,
       imgSrc: new Array(app.globalData.fileID)
     };
-    // console.log('form发生了submit事件，携带数据为：', e.detail.value);
-    
-    //上传图片
-    db.collection('book').add({
-      //url: getApp().globalData.urlPath + 'uploadImage?url=add', //地址
-      //filePath: that.data.imgSrc[0],//图片临时目录
-      // header: {
-      //   'content-type': 'multipart/form-data'
-      // },
-      data: formData,
-      success: function (res) {
-        //console.log(res);
-        //do something
-        wx.hideLoading();
+    if (that.data.collegeId==1){
+      db.collection('philosophybook').add({
+        data: formData,
+        success: function (res) {
+          wx.hideLoading();
           wx.switchTab({
             url: '../index/index'
           });
-      }
-    })
-  },
-
+        }
+      })
+    }
+    if (that.data.collegeId == 2) {
+      db.collection('Economicsbook').add({
+        data: formData,
+        success: function (res) {
+          wx.hideLoading();
+          wx.switchTab({
+            url: '../index/index'
+          });
+        }
+      })
+    }
+    if (that.data.collegeId == 3) {
+      db.collection('literaturebook').add({
+        data: formData,
+        success: function (res) {
+          wx.hideLoading();
+          wx.switchTab({
+            url: '../index/index'
+          });
+        }
+      })
+    }
+    if (that.data.collegeId == 4) {
+      db.collection('artbook').add({
+        data: formData,
+        success: function (res) {
+          wx.hideLoading();
+          wx.switchTab({
+            url: '../index/index'
+          });
+        }
+      })
+    }
+    if (that.data.collegeId == 5) {
+      db.collection('Technologybook').add({
+        data: formData,
+        success: function (res) {
+          wx.hideLoading();
+          wx.switchTab({
+            url: '../index/index'
+          });
+        }
+      })
+    }
+    if (that.data.collegeId == 6) {
+      db.collection('Novelbook').add({
+        data: formData,
+        success: function (res) {
+          wx.hideLoading();
+          wx.switchTab({
+            url: '../index/index'
+          });
+        }
+      })
+    }
+    if (that.data.collegeId == 7) {
+      db.collection('Studybook').add({
+        data: formData,
+        success: function (res) {
+          wx.hideLoading();
+          wx.switchTab({
+            url: '../index/index'
+          });
+        }
+      })
+    }
+    },
+    
   //预览图片
   perviewImg: function () {
     // console.log("====+++++")
