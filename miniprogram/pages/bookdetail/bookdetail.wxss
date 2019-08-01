@@ -136,6 +136,9 @@
 .fd-intro-txt {
     margin-bottom: 18rpx;
     color: #eee;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .fd-data {
@@ -211,13 +214,13 @@
 .fd-bd-shareperson-area {
     display: flex;
     width: 100%;
-    height: 35rpx;
+    height: 100rpx;
 }
 .fd-bd-sharebook-person {
     display: flex;
     width: 85%;
     overflow:hidden;
-    height: 35rpx;
+    height: 100rpx;
 }
 .fd-bd-sharebook-person-more {
     text-align:right;
@@ -306,9 +309,41 @@
 .bottom input {
     font-size: 30rpx;
     height: 40px;
-    width: 300rpx;
+    width: 500rpx;
     border-radius: 8px;
     background-color: #eee;
     padding-left: 70rpx;
 }
 
+.comment-item {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-bottom: 1px solid #bebebe;
+}
+
+
+.comment-item-head {
+    width: 80rpx;
+    height: 80rpx;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.comment-item-owner{
+    width: 600rpx;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+}
+
+.comment-item-name{
+    font-size: 35rpx;
+}
+
+.comment-item-comment{
+    margin-top:5px;
+    letter-spacing: 1px;
+    color: #8e8e8e;
+}

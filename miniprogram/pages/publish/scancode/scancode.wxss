@@ -1,0 +1,111 @@
+/* miniprogram/pages/publish/scancode/scancode.wxss */
+/* .content{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 20rpx;
+  position: relative;
+}
+.content image{
+  width: 200rpx;
+  height: 220rpx;
+}
+.content .bookname{
+  font-size: 20px;
+}
+ .content-left{
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  font-size: 16px;
+}
+.bookdeail{
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+.content{
+  display:flex;     
+ justify-content: center;      
+}
+image{
+  width: 250rpx;
+  height: 300rpx;
+}
+.fd-hd-bg {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 300rpx;
+    background-size: cover;
+    background-position: center;
+    filter: blur(30rpx);
+    transform: scale(1.2);
+    background: url('https://img3.doubanio.com/view/subject/l/public/s5804746.jpg')
+}
+.fd-bd {
+    padding: 0 40rpx 40rpx;
+    
+}
+
+.fd-bd-title {
+    padding-left: 20rpx;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #444;
+    border-left: 10rpx solid #47a86c;
+}
+
+.fd-bd-intro {
+    text-align: justify;
+    line-height: 1.5;
+    color: #666;
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+
+.fd-bd-tag {
+    display: flex;
+}
+
+.fd-bd-tag-item {
+    padding: 5rpx 10rpx;
+    margin-right: 15rpx;
+    border: 1px solid #ccc;
+    border-radius: 10rpx;
+    color: #666;
+}
+
+.fd-bd-person {
+    display: flex;
+    width: 100%;
+    height: 480rpx;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.fd-bd-shareperson-area {
+    display: flex;
+    width: 100%;
+    height: 35rpx;
+}
+.fd-bd-sharebook-person {
+    display: flex;
+    width: 85%;
+    overflow:hidden;
+    height: 35rpx;
+}
+.fd-bd-sharebook-person-more {
+    text-align:right;
+    width: 15%;
+    height: 35rpx;
+    color: #999
+}
+button{
+  margin-top: 10px;
+}

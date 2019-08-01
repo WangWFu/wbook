@@ -1,0 +1,28 @@
+<!--miniprogram/pages/index/searchshow/searchshow.wxml-->
+<!-- <view class="container">
+  <view class="listBox" wx:for="{{searchShow}}" wx:key="{{item.id}}">
+    <view class="content">
+      <navigator url='../videoShow/videoShow?id={{item.id}}'>
+        <image src="{{item.imgSrc}}" mode="widthFix"></image>
+        <view class='listTitle'>
+          <view class="listSubtitle">
+            <text>{{item.title}}</text>
+          </view>
+          <view class="listText">
+            <text>{{item.details}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view> -->
+ <view class='content' wx:for="{{searchShow}}" wx:key="{{index}}" bindtap='Jumpdetail' data-id='{{item._id}}'>
+    <image src='{{item.imgSrc}}'></image>
+    <view class='content-left'>
+      <text class='bookname'>{{item.title}}</text>
+      <text class='bookdeail'>{{item.details}}</text>
+      <text>分享者:{{item.sharauthor}}</text>
+    </view>
+  </view>
+
+

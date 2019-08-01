@@ -4,26 +4,37 @@
     "pages/index/bookstation/bookstation",
     "pages/index/bookself/bookself",
     "pages/index/mine/mine",
-    "pages/index/borrowlist/borrowlist",
+ 
     "pages/bookdetail/bookdetail",
     "pages/index/mycollection/mycollection",
     "pages/score/score",
     "pages/bookshare/bookshare",
     "pages/money/money",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/publish/scancode/scancode",
+    "pages/index/searchshow/searchshow",
+    "pages/index/bookstation/pushinfo/pushinfo",
+    "pages/index/bookstation/comment/comment",
+    "pages/bookdetail/makebook/makebook",
+    "pages/index/befborrow/befborrow",
+    "pages/index/inborrow/inborrow",
+    "pages/index/returnborrow/returnborrow",
+    "pages/authorize/authorize",
+    "pages/bookpush/bookpush",
+    "pages/index/info/info"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#F5F5DC",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "book",
+    "navigationBarBackgroundColor": "#F5F5DC",
+    "navigationBarTitleText": "书享阅客",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#000000",
     "borderStyle": "white",
-    "backgroundColor": "#FFFFFF",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",

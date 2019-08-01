@@ -1,5 +1,6 @@
 // miniprogram/pages/index/mine/mine.js
 var app=getApp();
+const db=wx.cloud.database();
 Page({
 
   /**
@@ -9,37 +10,23 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
       avatarUrl: '',
       nickName: '',
-    // orderItems
-    orderItems: [
-      {
-        typeId: 0,
-        name: '已借书',
-        url: 'bill',
-        imageurl: '',
-      },
-      {
-        typeId: 1,
-        name: '已预约',
-        url: 'bill',
-        imageurl: '',
-      },
-      {
-        typeId: 2,
-        name: '待归还',
-        url: 'bill',
-        imageurl: ''
-      },
-      {
-        typeId: 3,
-        name: '已还书',
-        url: 'bill',
-        imageurl: ''
-      }
-    ],
+    integral:0,
+    remoney:90,
+    id:''
   },
-  toOrder: function () {
+  tobefborrow:function(){
     wx.navigateTo({
-      url: '../borrowlist/borrowlist'
+      url: '../befborrow/befborrow'
+    })
+  },
+  inborrow: function () {
+    wx.navigateTo({
+      url: '../inborrow/inborrow'
+    })
+  },
+  returnborrow: function () {
+    wx.navigateTo({
+      url: '../returnborrow/returnborrow'
     })
   },
   /**
@@ -47,31 +34,36 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    
     // 查看是否授权
     wx.getSetting({
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: function (res) {
-              //从数据库获取用户信息
-              //that.queryUsreInfo();
-              //用户已经授权过
-              // wx.navigateBack({
-              //   delta: 1
-              // })
-              const db = wx.cloud.database();
-              db.collection('user').get({
-                data: {
-                  openid: app.globalData.openid
-                }, success: function (res) {
+              console.log(res)
+              db.collection('user').where({
+                _openid: app.globalData.openid
+              }).get({
+                // data: {
+                //   _openid: app.globalData.openid
+                // }, 
+                success: function (res) {
+                  console.log(res.data[0]._openid);
+                  db.collection('user').where({
+                  _openid: res.data[0]._openid
+                  }).get({
+                success: function (res) {
                   console.log(res.data);
                   that.setData({
                     avatarUrl: res.data[0].avatarUrl,
                     nickName: res.data[0].nickName,
-                    gender: res.data[0].gender
-                    
+                    gender: res.data[0].gender,
+                    id:res.data[0]._openid
                   })
                   //getApp().globalData.userInfo = res.data;
+                }
+              })
                 }
               })
             }
@@ -79,6 +71,44 @@ Page({
         }
       }
     })
+
+
+
+
+    // // 查看是否授权
+    // wx.getSetting({
+    //   success: function (res) {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       wx.getUserInfo({
+    //         success: function (res) {
+    //           console.log(res)
+    //           //从数据库获取用户信息
+    //           //that.queryUsreInfo();
+    //           //用户已经授权过
+    //           // wx.navigateBack({
+    //           //   delta: 1
+    //           // })
+    //           const db = wx.cloud.database();
+    //           db.collection('user').doc(app.globalData.openid).get({
+    //             // data: {
+    //             //   openid: app.globalData.openid
+    //             // }, 
+    //             success: function (res) {
+    //               console.log(res.data);
+    //               that.setData({
+    //                 avatarUrl: res.data[0].avatarUrl,
+    //                 nickName: res.data[0].nickName,
+    //                 gender: res.data[0].gender
+                    
+    //               })
+    //               //getApp().globalData.userInfo = res.data;
+    //             }
+    //           })
+    //         }
+    //       });
+    //     }
+    //   }
+    // })
   },
   bindGetUserInfo: function (e) {
     if (e.detail.userInfo) {
@@ -93,7 +123,9 @@ Page({
           avatarUrl: e.detail.userInfo.avatarUrl,
           province: e.detail.userInfo.province,
           city: e.detail.userInfo.city,
-          gender:e.detail.userInfo.gender
+          gender:e.detail.userInfo.gender,
+          integral:that.data.integral,
+          remoney:that.data.remoney
         },
         success: function (res) {
           //从数据库获取用户信息
@@ -122,23 +154,23 @@ Page({
     }
   },
   //获取用户信息接口
-  // queryUsreInfo: function () {
-  //   var that=this;
-  //   const db = wx.cloud.database();
-  //   db.collection('user').get({
-  //     data: {
-  //       openid: app.globalData.openid
-  //     }, success: function (res) {
-  //       console.log(res.data[0].avatarUrl);
-  //       that.setData({
-  //         avatarUrl:res.data[0].avatarUrl,
-  //         nickName: res.data[0].nickName,
-  //         gender: res.data[0].gender
-  //       })
-  //       //getApp().globalData.userInfo = res.data;
-  //     }
-  //   })
-  // },
+  queryUsreInfo: function () {
+    var that=this;
+    const db = wx.cloud.database();
+    db.collection('user').where({
+      _openid:that.data.id
+    }).get({
+       success: function (res) {
+        console.log(res.data[0].avatarUrl);
+        that.setData({
+          avatarUrl:res.data[0].avatarUrl,
+          nickName: res.data[0].nickName,
+          gender: res.data[0].gender
+        })
+        //getApp().globalData.userInfo = res.data;
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -150,7 +182,39 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function (res) {
+              //从数据库获取用户信息
+              //that.queryUsreInfo();
+              //用户已经授权过
+              // wx.navigateBack({
+              //   delta: 1
+              // })
+              const db = wx.cloud.database();
+              db.collection('user').where({
+                _openid:that.data.id
+              }).get({
+                success: function (res) {
+                  console.log(res.data);
+                  that.setData({
+                    avatarUrl: res.data[0].avatarUrl,
+                    nickName: res.data[0].nickName,
+                    gender: res.data[0].gender
 
+                  })
+                  //getApp().globalData.userInfo = res.data;
+                }
+              })
+            }
+          });
+        }
+      }
+    })
   },
 
   /**

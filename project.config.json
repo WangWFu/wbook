@@ -12,9 +12,10 @@
 	},
 	"appid": "wx9ff42dddf6423735",
 	"projectname": "book",
-	"libVersion": "2.7.0",
+	"libVersion": "2.7.2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -32,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -77,20 +78,6 @@
 				},
 				{
 					"id": -1,
-					"name": "index",
-					"pathName": "pages/bookshare/second/second",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "bookself",
-					"pathName": "pages/index/bookself/bookself",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "bookself",
 					"pathName": "pages/index/bookself/bookself",
 					"query": "",
@@ -101,6 +88,96 @@
 					"name": "bookshare",
 					"pathName": "pages/bookshare/bookshare",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "publish",
+					"pathName": "pages/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "scancode",
+					"pathName": "pages/publish/scancode/scancode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "borrowlist",
+					"pathName": "pages/index/borrowlist/borrowlist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mycollection",
+					"pathName": "pages/index/mycollection/mycollection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bocom",
+					"pathName": "pages/index/bookstation/comment/comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "money",
+					"pathName": "pages/money/money",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bef",
+					"pathName": "pages/index/befborrow/befborrow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "return",
+					"pathName": "pages/index/returnborrow/returnborrow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bookshare",
+					"pathName": "pages/bookshare/bookshare",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bookpush",
+					"pathName": "pages/bookpush/bookpush",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bookstation",
+					"pathName": "pages/index/bookstation/bookstation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "infos",
+					"pathName": "pages/index/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "score",
+					"pathName": "pages/score/score",
 					"scene": null
 				}
 			]

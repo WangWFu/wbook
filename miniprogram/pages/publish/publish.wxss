@@ -41,7 +41,13 @@
     width: 200rpx;
 }
 
-.submit {
+/* .submit {
     align-items: center;
     width: 100%;
+} */
+.sub{
+  margin: 20rpx;
+}
+.btn{
+  margin: 20rpx;
 }

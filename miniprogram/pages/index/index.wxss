@@ -96,25 +96,33 @@
   height: 220rpx;
 }
 .content .bookname{
-  font-size: 20px;
+  font-size: 30rpx;
+  color: #B22222
 }
  .content-left{
   margin-left:20rpx;
   display: flex;
   flex-direction: column;
   width: 400rpx;
-  font-size: 16px;
+  font-size: 35rpx;
 }
 .bookdeail{
-  overflow: hidden;
+  /* overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
+     display: -webkit-box ;
+  overflow: hidden; /*隐藏溢出的文本  */
+  text-overflow: ellipsis;
+  word-break: break-all;/*自动换行*/
+  -moz-box-orient: vertical; /*从上到下自动排列子元素*/
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp:3; /*显示的行数*/
 }
 .icon-publish{
     width: 120rpx;
     height: 120rpx;
     position: fixed;
-    bottom: 15px;
-    right: 20px;
+    bottom: 15rpx;
+    right: 20rpx;
     z-index: 100;
 }

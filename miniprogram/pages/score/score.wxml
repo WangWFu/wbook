@@ -1,10 +1,10 @@
 <!--miniprogram/pages/score/score.wxml-->
 <view class='content'>
 <text>您当前的积分为:</text>
-<text>0</text> 
+<text>{{integral}}</text> 
 </view>
 
 <view class='test'>
 分享更多的书籍可以增加你的积分哦
 </view>
-<navigator url='../bookshare/bookshare' class='fn'>去分享</navigator>
+<navigator url='../bookpush/bookpush' class='fn'>去分享</navigator>

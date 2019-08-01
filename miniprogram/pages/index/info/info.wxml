@@ -1,0 +1,16 @@
+<!--miniprogram/pages/index/info/info.wxml-->
+<view class="card" >
+        <view bindtap="onItemClick">
+            <!-- <image class="image" mode="aspectFill" src="图片地址"/> -->
+            <text class="image">还书说明</text>
+            <view class="title">进入已借书界面，长按想还书籍，点击确定就能还书</view>
+        </view>
+    </view>
+    <view class="card" >
+        <view bindtap="onItemClick">
+            <!-- <image class="image" mode="aspectFill" src="图片地址"/> -->
+            <text class="image">押金说明</text>
+            <view class="title">缴纳押金才能借阅书籍，可选择退还押金，退还押金后将不能借阅书籍</view>
+        </view>
+    </view>
+   

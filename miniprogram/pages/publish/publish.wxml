@@ -12,8 +12,9 @@
             </view>
         </view>
     </view>
-    <view class='submit'>
+    <!-- <view class='submit'>
         <button form-type='submit' type='primary'>分享图书</button>
-    </view>
+    </view> -->
+    <button form-type='submit' type='primary' class='sub'>分享图书</button>
 </form>
-
+<button type='primary' bindtap='scancode' class='btn'>扫码找书</button>

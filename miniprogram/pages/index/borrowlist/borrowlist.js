@@ -1,20 +1,13 @@
-// miniprogram/pages/index/borrowlist/borrowlist.js
-var app=getApp();
+// pages/index/borrowlist/borrowlist.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navbar: ['已借书', '已预约', '待归还', '已还书'],
-    currentTab: 0,
+
   },
-  navbarTap: function (e) {
-    console.debug(e);
-    this.setData({
-      currentTab: e.currentTarget.dataset.idx
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

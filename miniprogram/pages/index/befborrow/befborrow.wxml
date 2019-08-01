@@ -1,0 +1,29 @@
+<!--miniprogram/pages/index/befborrow/befborrow.wxml-->
+<view class='conter'>
+  <view wx:if="{{ishaveChild}}">
+    <view class='cartMain'>
+      <view>
+        <view class='cart-box'>
+          <view class='content' wx:for="{{list}}" wx:key="{{index}}" bindlongpress='longPress' data-id='{{item._id}}' data-index="{{index}}" data-selid='{{item.id}}'>
+          
+            <image src='{{item.imgSrc}}' bindtap='Jumpdetail' data-id='{{item.id}}'></image>
+            <view class='content-left'>
+              <text class='bookname'>{{item.title}}</text>
+              <text class='bookdeail'>{{item.details}}</text>
+              <text>分享者:{{item.nickName}}</text>
+              <text>借书日期:{{item.borrowDay}}</text>
+              <text>还书日期:{{item.deadDay}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view wx:else>
+    <view class="tab-content1">
+      <image class="tab-image" src="/images/jilu.png"></image>
+      <text>您还没有借书哦！快去借书吧</text>
+    </view>
+  </view>
+</view>

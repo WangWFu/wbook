@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "图书分享"
+  "navigationBarTitleText": "我的分享",
+  "enablePullDownRefresh": true
 }

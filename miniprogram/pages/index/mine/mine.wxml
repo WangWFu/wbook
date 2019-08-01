@@ -1,6 +1,6 @@
 
 <!-- <image src='/images/bg.png'></image> -->
-  <view class="userinfo" style="background-image: url(/images/bg.png)">
+  <view class="userinfo" >
     <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
     <view class="userinfo-nickname">{{nickName}}
      <block wx:if="{{gender == 1}}">
@@ -13,15 +13,15 @@
     <!-- <image src="" class="account-bg"></image> -->
   </view>
 
-  <view class="separate"></view>
+  <!-- <view class="separate"></view>
   <navigator url='../borrowlist/borrowlist'>
   <view class="order" catchtap="toOrder">
     <text class="myorder-text">借书记录</text>
     <text class="myorderlook-text">查看全部记录</text>
     <image class="next-image" src="/images/tiaozhuan.png"></image>
   </view>
-  </navigator>
-  <!-- <view class="person-line"></view> -->
+  </navigator> -->
+  <!-- <view class="person-line"></view>
   <view class="navs">
     <block wx:for-items="{{orderItems}}" wx:key="name">
       <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
@@ -29,9 +29,45 @@
         <text>{{item.name}}</text>
       </view>
     </block>
-  </view>
-
-  <view class="separate"></view>
+  </view>  -->
+<view class="person-line"></view>
+  <view class="navs">
+      <view class="nav-item" catchtap="tobefborrow">
+        <image src="/images/shu.png" class="nav-image" />
+        <text>已借书</text>
+      </view>
+     <view class="nav-item" catchtap="inborrow">
+        <image src="/images/shu.png" class="nav-image" />
+        <text>待归还</text>
+      </view>
+       <view class="nav-item" catchtap="returnborrow">
+        <image src="/images/shu.png" class="nav-image" />
+        <text>已还书</text>
+      </view>
+  </view> 
+  <!-- <view class="separate"></view> -->
+   <!-- <view class="person-line"></view>
+    <navigator url='../../score/score'>
+    <view class="list-item">
+      <image class="item-image" src="/images/yuedu.png"></image>
+      <text class="item-text">已借书</text>
+    </view>
+    </navigator>
+     <view class="person-line"></view>
+    <navigator url='../../score/score'>
+    <view class="list-item">
+      <image class="item-image" src="/images/yuedu.png"></image>
+      <text class="item-text">待归还</text>
+    </view>
+    </navigator>
+     <view class="person-line"></view>
+    <navigator url='../../score/score'>
+    <view class="list-item">
+      <image class="item-image" src="/images/yuedu.png"></image>
+      <text class="item-text">已还书</text>
+    </view>
+    </navigator> -->
+  <view class="person-line"></view>
   <view class="person-list">
   <navigator url='../mycollection/mycollection'>
     <view class="list-item">
@@ -50,7 +86,7 @@
     <navigator url='../../bookshare/bookshare'>
     <view class="list-item">
       <image class="item-image" src="/images/yuedu.png"></image>
-      <text class="item-text">我要分享</text>
+      <text class="item-text">我的分享</text>
     </view>
     </navigator>
     <view class="person-line"></view>
@@ -61,10 +97,12 @@
     </view>
     </navigator>
     <view class="person-line"></view>
+    <navigator url='../info/info'>
     <view class="list-item">
-      <image class="item-image" src="/images/fenxiang.png"></image>
-      <text class="item-text">推广邀请</text>
+      <image class="item-image" src="/images/shuom.png"></image>
+      <text class="item-text">规则与说明</text>
     </view>
+      </navigator>
      <view class="person-line"></view>
      <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
         授权登录

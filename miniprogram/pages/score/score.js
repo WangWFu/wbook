@@ -1,18 +1,66 @@
 // miniprogram/pages/score/score.js
+const db=wx.cloud.database();
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    integral:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      var that=this;
 
+
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res)
+              db.collection('user').where({
+                _openid: app.globalData.openid
+              }).get({
+                // data: {
+                //   _openid: app.globalData.openid
+                // }, 
+                success: function (res) {
+                  console.log(res.data[0]._openid);
+                  db.collection('user').where({
+                    _openid: res.data[0]._openid
+                  }).get({
+                    success: function (res) {
+                      console.log(res.data[0].integral);
+                    
+                      that.setData({
+                        integral: res.data[0].integral
+                      })
+                    }
+                  })
+                }
+              })
+            }
+          });
+        }
+      }
+    })
+
+
+      // db.collection('user').where({
+      //   _openid: getApp().globalData.openid,
+      // }).get({
+      //   success:function(res){
+      //     console.log(res.data[0].integral)
+      //     that.setData({
+      //       integral: res.data[0].integral
+      //     })
+      //   }
+      // })
   },
 
   /**
@@ -26,7 +74,52 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    
 
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res)
+              db.collection('user').where({
+                _openid: app.globalData.openid
+              }).get({
+               
+                success: function (res) {
+                  console.log(res.data[0]._openid);
+                  db.collection('user').where({
+                    _openid: res.data[0]._openid
+                  }).get({
+                    success: function (res) {
+                      console.log(res.data[0].integral);
+                    
+                      that.setData({
+                        integral: res.data[0].integral
+                      })
+                    }
+                  })
+                }
+              })
+            }
+          });
+        }
+      }
+    })
+
+
+
+    // db.collection('user').where({
+    //   _openid: getApp().globalData.openid,
+    // }).get({
+    //   success: function (res) {
+    //     console.log(res.data[0].integral)
+    //     that.setData({
+    //       integral: res.data[0].integral
+    //     })
+    //   }
+    // })
   },
 
   /**

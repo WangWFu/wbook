@@ -1,2 +1,53 @@
 <!--miniprogram/pages/index/bookstation/bookstation.wxml-->
-<view>正在接入更多的小站</view>
+<!-- <view>正在接入更多的小站</view>
+<view>{{date}}</view> -->
+<!--内容-->
+<view>
+  <view class='page'>
+    <!--循环遍历失物招领内容 -->
+    <block wx:for="{{queryResult}}" wx:for-item="item" wx:for-index="index" wx:key="{{n}}">
+      <view class='body'>
+        <view class='author'>
+          <!-- <w-avatar src="{{item.avatar}}">W</w-avatar>  头像 -->
+          <image class='userinfo-avator' src="{{item.avatarUrl}}"></image>
+          <!--头像 -->
+          <text class='username'>{{item.author}}</text>
+          <!--用户名 -->
+        </view>
+        <!-- 文本内容-->
+        <text class='content'>{{item.content}}</text>
+        <!--图片内容 -->
+        <view class='content-img' wx:if="{{item.imgsFileId[0]!=null}}">
+          <image src='{{item.imgsFileId}}' class='image' bindtap='previewImg' data-index="{{index}}"></image>
+        </view>
+
+        <view class='date-comment'>
+          <!-- 日期-->
+          <text class='date-content'>{{item.date}}</text>
+          <!--评论 -->
+          <view>
+            <image src='/images/wx_app_comment.jpg' class='comment-image' bindtap='onTapToComment' data-index="{{item._id}}"></image>
+            <text class='comment-count'>{{item.commentSize}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 分割线-->
+      <view class='divLine'></view>
+    </block>
+
+
+    <!-- <text class="code" wx:if="{{queryResult}}">{{queryResult}}</text>
+       <text>{{userInfo}}</text> -->
+    <!-- 解决底部导航栏遮挡部分内容的问题-->
+    <view class='save-bottom'></view>
+
+  </view>
+
+</view>
+<!-- <view class="release" hidden="{{!releaseFocus}}">
+  <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" focus="{{releaseFocus}}" placeholder="回复 {{releaseName}}"  value='{{text}}' bindinput='incom'></textarea>
+  <button class="submit" size="mini" type='primary' bindtap='sendcomment'>发送</button>
+</view> -->
+<view bindtap='Publish'>
+  <image class='icon-publish' src='/images/publish.png'></image>
+</view>

@@ -1,0 +1,38 @@
+
+<view class='scroll'>
+<view class='content'>
+ <view class="fd-hd-bg"></view>
+<image src='{{imgSrc}}'></image>
+</view>
+<view class="fd-bd">
+            <view class="fd-bd-title">书名</view>
+            <view class="fd-bd-intro">{{title}}</view>
+            <view class="fd-bd-title">作者简介</view>
+            <view class="fd-bd-intro">{{author}}</view>
+            <view class="fd-bd-title">内容简介</view>
+             <view class="fd-bd-intro">{{details}}</view>
+             <view class="fd-bd-title">价格</view>
+             <view class="fd-bd-intro">{{price}}</view>
+            <!-- <view class="fd-bd-shareperson-area">
+              <view class="fd-bd-sharebook-person">
+                <block wx:for="{{bookCanshareList}}" wx:for-item="bookCanshareItem" wx:key="bookCanshareItem">
+                  <view class="fd-bd-sharebook-person-item">{{bookCanshareItem.username}}</view>
+                </block>
+              </view>
+              <block wx:if="{{bookCanshareList.length>0}}">
+                <view class="fd-bd-sharebook-person-more" data-id="{{bookDetail.bookId}}"  data-name="{{bookDetail.title}}"  bindtap="shareBooklist">
+                  更多>
+                </view>
+              </block>
+            </view> -->
+      </view>
+    <!-- <view class="section">
+      <view class="section__title">请选择图书分类</view>
+      <picker bindchange="bindPickerChange2" value="{{objectIndex}}" range="{{objectArray}}" range-key="name">
+        <view class="picker">
+          当前选择：{{objectArray[objectIndex].name}}
+        </view>
+      </picker>
+    </view> -->
+    <button type='primary' bindtap='upinfo'>分享</button>
+</view>

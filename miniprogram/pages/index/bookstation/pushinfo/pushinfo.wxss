@@ -1,0 +1,48 @@
+/* miniprogram/pages/index/bookstation/pushinfo/pushinfo.wxss */
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20rpx;
+}
+
+.heading {
+    font-size: 35rpx;
+    color: #ccc;
+    letter-spacing: 3px;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+.introduce {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px 5rpx;
+    width: 100%;
+}
+
+.img-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.litimg {
+    height: 210rpx;
+    width: 350rpx;
+    margin-right:20rpx;
+}
+
+.add-box {
+    height: 200rpx;
+    width: 200rpx;
+    border: 2px dashed #bfbfbf;
+}
+
+.add-img {
+    height: 200rpx;
+    width: 200rpx;
+}
+
+.submit {
+    align-items: center;
+    width: 100%;
+}

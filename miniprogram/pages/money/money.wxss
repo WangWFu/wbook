@@ -1,1 +1,25 @@
 /* miniprogram/pages/money/money.wxss */
+page{
+background: #e2e2e2;
+}
+.box{
+  border: 1px solid #fff;
+  background: #fff;
+  width: 100%;
+  height: 80rpx;
+  margin: 50rpx 0rpx 0rpx 0rpx;
+  
+}
+.text{
+padding-top: 100rpx;
+color: #DBDBDB
+}
+.mon{
+  float: right;
+  padding-right: 20rpx;
+}
+.d{
+  text-align: center;
+  color: #B0B0B0;
+  padding: 10rpx;
+}

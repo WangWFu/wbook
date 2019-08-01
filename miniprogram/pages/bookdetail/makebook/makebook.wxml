@@ -1,0 +1,17 @@
+<!--miniprogram/pages/bookdetail/makebook/makebook.wxml-->
+<view>
+
+  <text>请选择要预约的时间</text>
+  <block wx:if="{{num==0}}">
+    <picker mode="date" value="" start="{{makeday}}" end="{{stopday}}" bindchange="bindDateChange">
+      <text bindtap='datetime'>data{{day}}</text>
+    </picker>
+  </block>
+  <block wx:else>
+    <picker mode="date" value="" start="{{makeday}}" end="{{stopday}}" bindchange="bindDateChange">
+      <text bindtap='datetime'>data1{{day}}</text>
+    </picker>
+  </block>
+</view>
+<button bindtap='send'>确认预约</button>
+<picker mode="date" value="{{date}}" start="2015-09-01" end="2050-09-01" bindchange="bindDateChange"> </picker>

@@ -1,0 +1,99 @@
+.conter{
+  height: 100%;
+  
+}
+/* .icon{
+  margin: 85rpx 20rpx
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 20rpx;
+  position: relative;
+}
+.content image{
+  width: 200rpx;
+  height: 250rpx;
+}
+.content .bookname{
+  font-size: 20px;
+}
+ .content-left{
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  font-size: 16px;
+}
+.bookdeail{
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+/* pages/cart/cart.wxss */
+.cartMain{
+ margin-bottom: 120rpx;
+}
+.cart-box{
+   width: 100%;
+  height: 280rpx;
+  background: white;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx;
+  position: relative;
+}
+.content image{
+  width: 200rpx;
+  height: 250rpx;
+}
+.content .bookname{
+  font-size: 20px;
+}
+ .content-left{
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  font-size: 16px;
+}
+.bookdeail{
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cart-bottom{
+  position: fixed;
+  width: 100%;
+  height: 87rpx;
+  bottom:0;
+  background: white;
+}
+.icon{
+  float: left;
+  margin: 85rpx 20rpx;
+}
+.cart-icon{
+  margin:18rpx 20rpx;
+  float: left;
+}
+.cart-pay{
+  width: 230rpx;
+  height: 100%;
+  background: #405F80;
+  float: right;
+}
+.cart_pay{
+  display: block;
+  line-height: 87rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+}
+.checkAll{
+  line-height: 87rpx;
+  font-size: 28rpx;
+}

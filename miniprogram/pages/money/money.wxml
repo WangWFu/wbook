@@ -1,2 +1,14 @@
 <!--miniprogram/pages/money/money.wxml-->
-
+<view class='box'>
+<text class='text'>押金金额</text>
+<text class='mon'>￥{{remoney}}.00</text>
+</view>
+<view class='d'>
+<text>若退还押金，您将无法享受服务</text>
+<block wx:if="{{remoney!=0}}">
+<button type='primary' bindtap='return'>退还押金</button>
+</block>
+<block wx:if="{{remoney==0}}">
+<button type='primary' bindtap='return1'>支付押金</button>
+</block>
+</view>

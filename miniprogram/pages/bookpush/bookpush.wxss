@@ -1,0 +1,33 @@
+/* miniprogram/pages/bookpush/bookpush.wxss */
+.title{
+    display: flex;
+    flex-direction: row;
+    margin:20px 0 5px 25rpx;
+    height: 20px;
+    line-height: 20px;
+}
+
+/* .title image{
+    width:30rpx;
+    height: 30rpx;
+    padding-top: 5px;
+    padding-right: 5px;
+} */
+
+.title text{
+    font-size: 20px;
+    color: #bebebe;
+}
+
+.college{
+    width: 45%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: white;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 25rpx;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+}

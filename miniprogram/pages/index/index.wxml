@@ -1,6 +1,6 @@
 <!-- 搜索区域 -->
 <view class='search-area'>
-  <input placeholder='请输入书名/关键字' bindinput='textinput'></input>
+  <input placeholder='请输入书名/关键字'  bindconfirm='goSearch' value='{{word}}' bindinput="bindKeyInput"></input>
   <icon type="search" size="18" color="#666666" bindtap='searcher'/>
 </view>
 <!-- 轮播图 -->
@@ -22,16 +22,16 @@
   <text>热门推荐:</text>
 </view>
 <block>
-<navigator url='../bookdetail/bookdetail'>
-  <view class='content'>
-    <image src='/images/1.png'></image>
+<!-- <navigator url='../bookdetail/bookdetail'> -->
+  <view class='content' wx:for="{{list}}"  bindtap='Jumpdetail' data-id='{{item._id}}' wx:key="{{index}}">
+    <image src='{{item.imgSrc}}'></image>
     <view class='content-left'>
-      <text class='bookname'>aaa</text>
-      <text class='bookdeail'>knidfekmosmfeflflgeinosndweinsdfefeegggegegegegegeshhhhhhh</text>
-      <text>分享者:</text>
+      <text class='bookname'>{{item.title}}</text>
+      <text class='bookdeail'>{{item.details}}</text>
+      <text>分享者:{{item.sharauthor}}</text>
     </view>
   </view>
-  </navigator>
+  <!-- </navigator> -->
 </block>
 <view bindtap='Publish'>
     <image class='icon-publish' src='/images/publish.png'></image>

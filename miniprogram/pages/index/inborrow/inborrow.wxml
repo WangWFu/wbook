@@ -1,0 +1,44 @@
+<!--miniprogram/pages/index/inborrow/inborrow.wxml-->
+<view class='conter'>
+  <view wx:if="{{ishaveChild}}">
+    <view class='cartMain'>
+      <view>
+        <view class='cart-box'>
+          <view class='content' wx:for="{{list}}" wx:key="{{index}}" bindlongpress='longPress' data-id='{{item._id}}' data-index="{{index}}" data-selid='{{item.id}}'>
+            <!-- <view class='icon'>
+              <icon wx:if="{{item.selected}}" type="success" color="#405F80" size="20" bindtap="selectedCart" data-index="{{index}}" data-select='{{item.selected}}' data-id='{{item._id}}' />
+              <icon wx:else type="circle" bindtap="selectedCart" size="20" data-index="{{index}}" data-id='{{item._id}}' />
+
+            </view> -->
+
+            <image src='{{item.imgSrc}}' bindtap='Jumpdetail' data-id='{{item.id}}'></image>
+            <view class='content-left'>
+              <text class='bookname'>{{item.title}}</text>
+              <text class='bookdeail'>{{item.details}}</text>
+              <text>分享者:{{item.nickName}}</text>
+              <text>借书日期:{{item.borrowDay}}</text>
+              <text>还书日期:{{item.deadDay}}</text>
+            </view>
+          </view>
+
+          <!-- 底部
+          <view class="cart-bottom" wx:for="{{list}}" wx:key="{{index}}" hidden='{{replay}}'>
+            <icon wx:if="{{CheckAll}}" class="cart-icon" type="success" color="#405F80" size="20" bindtap="selectall" data-index="{{index}}" data-id='{{item._id}}' />
+            <icon wx:else type="circle" class="cart-icon" size="20" bindtap="selectall" data-index="{{index}}" data-id='{{list}}' />
+            <text class='checkAll'>全选</text>
+            <view class='cart-pay'>
+              <text class='cart_pay' bindtap="returnbook" data-id='{{item._id}}' data-index="{{index}}">还书</text>
+            </view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view wx:else>
+    <view class="tab-content1">
+      <image class="tab-image" src="/images/jilu.png"></image>
+      <text>您还没有未归还的书,请继续保持良好信用！</text>
+    </view>
+  </view>
+</view>
