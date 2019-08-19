@@ -40,14 +40,33 @@
     height: 200rpx;
     width: 200rpx;
 }
-
-/* .submit {
-    align-items: center;
-    width: 100%;
-} */
 .sub{
   margin: 20rpx;
 }
 .btn{
   margin: 20rpx;
+}
+.desc{
+  width:300px;
+  height: 60rpx;
+  
+}
+.desc text{
+  position: relative;
+  display: -webkit-box ;
+  overflow: hidden; /*隐藏溢出的文本  */
+  text-overflow: ellipsis;
+  word-break: break-all;/*自动换行*/
+  -moz-box-orient: vertical; /*从上到下自动排列子元素*/
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp:1; /*显示的行数*/
+  font-size: 12px;
+}
+.desc text::after{
+  content: '';
+  border: 5px solid #EDEDED;
+  border-color: #EDEDED transparent transparent;
+  position: absolute;
+  top: 6px;
+  left: 286px;
 }

@@ -13,32 +13,13 @@
       <image src="{{bookDetail[0].imgSrc}}" class="fd-cover"></image>
       <view class="fd-intro">
         <view class="fd-title">{{bookDetail[0].title}}</view>
-        <!-- <view class="fd-intro-txt">分享：{{bookDetail[0].sharauthor}}</view>
-                <view class="fd-intro-txt">详情：{{bookDetail[0].details}}</view> -->
-        <!-- <view class="fd-intro-txt">详情：
-                    <block wx:if="{{bookDetail.rating.average == 0}}">
-                        暂无评分
-                    </block>
-                    <block wx:else>
-                        {{bookDetail.rating.average}}分
-                    </block>
-                </view> -->
-        <!-- <view class="fd-intro-txt">出版日期：{{bookDetail.pubdate}}</view> -->
       </view>
       <view class="fd-book-button">
         <view class="fd-favorite {{isBookFavorite ? 'fd-favorite-active' : ''}}" bindtap="managebook">收藏</view>
         <block>
           <view class="fd-sharebook" data-id="{{bookDetail[0]._id}}" data-name="{{bookDetail.title}}" bindtap="borrowbook">借书</view>
         </block>
-        <!-- <block>
-          
-        
-            <view class="fd-sharebook" data-id="{{bookDetail[0]._id}}" data-name="{{bookDetail.title}}" bindtap="makebook">预约</view>
-         
-        </block> -->
-        <!-- <block wx:if="{{bookDetail.ShareBook}}">
-              <view class="fd-sharebook" data-id="{{bookDetail.bookId}}"  data-name="{{bookDetail.title}}"  bindtap="shareBooklist" >纸质书</view>
-            </block> -->
+      
       </view>
     </view>
     <view class="fd-data">

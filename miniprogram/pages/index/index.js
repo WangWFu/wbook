@@ -10,7 +10,7 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561529023886&di=78a7524c7fe8621cf44dc5caea4c0152&imgtype=0&src=http%3A%2F%2Fds.devstore.cn%2F20150725%2F1437810946564%2F1.jpeg'
+      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565803168629&di=8e60e5f1d57321fdfd473ecd3c10de63&imgtype=0&src=http%3A%2F%2Fs9.sinaimg.cn%2Fmiddle%2F9cc94970gc3247375b398%26690'
     }, {
       id: 1,
       type: 'image',
@@ -22,7 +22,7 @@ Page({
     }, {
       id: 3,
       type: 'image',
-      url: 'http://s3.sinaimg.cn/middle/6574f438h7a05d1823b42&690'
+        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564642746992&di=ba678a7b35808acceb7dbc01d721a568&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160824%2Fb274c8dee2204f7b8e9b273a98e92046_th.jpg'
     }, {
       id: 4,
       type: 'image',
@@ -34,7 +34,7 @@ Page({
     }, {
       id: 6,
       type: 'image',
-        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561528998622&di=4df219e616972fcb0af2258b7c584fd7&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F10%2F09%2F0257f93e08845c1.jpg'
+        url: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2868232624,1616554254&fm=27&gp=0.jpg'
     }],
     text:'',
     word:'',
@@ -135,6 +135,24 @@ Page({
 
       }
     })
+  },
+  //跳转地图
+  goToaddress: function (event) {
+    var that = this;
+    var addressName = event.currentTarget.dataset.addressname;
+    var latitude = event.currentTarget.dataset.latitude;
+    var longitude = event.currentTarget.dataset.longitude;
+    let plugin = requirePlugin('route-plan');
+    let key = '4CQBZ-2QQ6F-NEIJX-JZY44-TKCSZ-N6BXP';  //使用在腾讯位置服务申请的key
+    let referer = 'demo';   //调用插件的app的名称
+    let endPoint = JSON.stringify({  //终点
+      'name': addressName,
+      'latitude': latitude,
+      'longitude': longitude
+    });
+    wx.navigateTo({
+      url: 'plugin://route-plan/route-plan?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+    });
   },
   /**
    * 生命周期函数--监听页面加载

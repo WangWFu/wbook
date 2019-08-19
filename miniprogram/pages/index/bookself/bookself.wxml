@@ -1,37 +1,24 @@
-<!--主盒子-->
-<view class="container">
-  <!--左侧栏-->
-  <view class="nav_left">
-    <block wx:for="{{cateItems}}" wx:key="{{index}}">
-      <!--当前项的id等于item项的id，那个就是当前状态-->
-      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
-      <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
-    </block>
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{nav}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{item.name}}
   </view>
-  <!--右侧栏-->
-  <view class="nav_right">
-    <!--如果有数据，才遍历项-->
-    <view wx:if="{{ishaveChild}}">
-      <block wx:for="{{children}}" wx:key="{{index}}">
-        <view class="nav_right_items">
-          <!--界面跳转 -->
-
-          <view class='content' bindtap='Jumpdetail' data-id='{{item._id}}'>
-            
-            <image src='{{item.imgSrc}}'></image>
-            <view class='content-left'>
-              <text class='bookname'>{{item.title}}</text>
-              <text class='bookdeail'>{{item.details}}</text>
-
-              <text>分享者:{{item.sharauthor}}</text>
-
-            </view>
-          </view>
-
-        </view>
-      </block>
-    </view>
-    <!--如果无数据，则显示数据-->
-    <view class="nodata_text" wx:else>该分类暂无数据</view>
+</scroll-view>
+<view wx:if="{{ishaveChild}}">
+<block wx:for="{{children}}" wx:key="{{index}}">
+<view class='bookcontent' >
+  <view class='bookname'>
+    <text>{{item.title}}</text>
+  </view>
+  <view class='content' bindtap='Jumpdetail' data-id='{{item._id}}'>
+    <image src='{{item.imgSrc}}' class='img'></image>
+    <text class='direct'>{{item.details}}</text>
+    <text class='sharename'>分享者:{{item.sharauthor}}</text>
+    <image src='../../../images/address.png' class='address'></image>
+    <text class='addressname' bindtap="goToaddress" data-addressname="{{item.addressname}}" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}">{{item.addressname}}</text>
   </view>
 </view>
+
+  </block>
+</view>
+<!--如果无数据，则显示数据-->
+<view class="nodata_text" wx:else>该分类暂无数据</view>

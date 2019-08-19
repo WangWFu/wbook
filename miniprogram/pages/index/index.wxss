@@ -84,7 +84,7 @@
   color: #333;
   left: 10rpx;
 }
-.content{
+/* .content{
   display: flex;
   flex-direction: row;
   margin-top: 10px;
@@ -107,17 +107,14 @@
   font-size: 35rpx;
 }
 .bookdeail{
-  /* overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; */
      display: -webkit-box ;
-  overflow: hidden; /*隐藏溢出的文本  */
+  overflow: hidden; 
   text-overflow: ellipsis;
-  word-break: break-all;/*自动换行*/
-  -moz-box-orient: vertical; /*从上到下自动排列子元素*/
+  word-break: break-all;
+  -moz-box-orient: vertical; 
   -webkit-box-orient: vertical; 
-  -webkit-line-clamp:3; /*显示的行数*/
-}
+  -webkit-line-clamp:3; 
+} */
 .icon-publish{
     width: 120rpx;
     height: 120rpx;
@@ -125,4 +122,47 @@
     bottom: 15rpx;
     right: 20rpx;
     z-index: 100;
+}
+
+.bookcontent{
+  height: 190px;
+  border: 1px solid #fff;
+  margin-top: 10rpx;
+border-radius: 5px;
+background: #fff;
+}
+.bookname text{
+  font-size: 14px;
+}
+.img{
+  width: 120px;
+  height: 150px;
+  float: left;
+  margin-top: 10px;
+}
+.content{
+float: left;
+overflow: hidden;
+}
+.address{
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+}
+.sharename{
+   display: block;
+   font-size: 13px;
+}
+.direct{
+  display: block;
+ display: -webkit-box;
+  overflow: hidden; /*隐藏溢出的文本  */
+  text-overflow: ellipsis;
+  word-break: break-all;/*自动换行*/
+  -moz-box-orient: vertical; /*从上到下自动排列子元素*/
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp:4; /*显示的行数*/
+  font-size: 14px;
+  line-height: 20px;
+  margin: 10px;
 }

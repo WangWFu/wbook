@@ -6,131 +6,65 @@ Page({
    */
   data: {
     ishaveChild:false,
-    cateItems: [
+    TabCur: 0,
+    scrollLeft: 0,
+    nav: [
       {
-        cate_id: 1,
-        cate_name: "哲学类",
-        //ishaveChild: true,
-        children:
-          [
-            // {
-            //   child_id: 1,
-            //   title: '',
-            //   imgSrc: ""
-            // } 
-          ]
+        id: 0,
+        name: '哲学',
       },
       {
-        cate_id: 2,
-        cate_name: "经济类",
-        //ishaveChild: false,
-        children:
-          [
-            // {
-            //   child_id: 2,
-            //   title: '',
-            //   imgSrc: ""
-            // } 
-          ]
-      },
-      {
-        cate_id: 3,
-        cate_name: "文学类",
-        //ishaveChild: true,
-        children:
-          [
-            // {
-            //   child_id: 3,
-            //   title: '',
-            //   imgSrc: ""
-            // } 
-          ]
-      },
-      {
-        cate_id: 4,
-        cate_name: "艺术类",
-        //ishaveChild: true,
-        children: [
-          // {
-          //   child_id: 4,
-          //   title: '',
-          //   imgSrc: ""
-          // } 
-        ]
-      },
-      {
-        cate_id: 5,
-        cate_name: "工业技术类",
-        //ishaveChild: true,
-        children: [
-          // {
-          //   child_id: 5,
-          //   title: '',
-          //   imgSrc: ""
-          // } 
-        ]
-      },
-      {
-        cate_id: 6,
-        cate_name: "小说类",
-        //ishaveChild: true,
-        children: [
-          // {
-          //   child_id: 6,
-          //   title: '',
-          //   imgSrc: ""
-          // } 
-        ]
-      },
-      {
-        cate_id: 7,
-        cate_name: "学习资料类",
-        //ishaveChild: true,
-        children: [
-          // {
-          //   child_id: 7,
-          //   title: '',
-          //   imgSrc: ""
-          // } 
-        ]
+        id: 1,
+        name: '经济',
+      }, {
+        id: 2,
+        name: '文学',
+      }, {
+        id: 3,
+        name: '艺术',
+      }, {
+        id: 4,
+        name: '工业技术',
+      }, {
+        id: 5,
+        name: '小说',
+      }, {
+        id: 6,
+        name: '学习资料',
       }
+
     ],
-    curNav: 1,
-    curIndex: 0
+    children:[]
   },
-  //事件处理函数  
-  switchRightTab: function (e) {
-    // 获取item项的id，和数组的下标值  
-    let id = e.target.dataset.id,
-      index = parseInt(e.target.dataset.index);
-    // 把点击到的某一项，设为当前index  
-    this.setData({
-      curNav: id,
-      curIndex: index
+
+  tabSelect(e) {
+    var that=this;
+    that.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 50
     })
-    //console.log(index);
-   if(index==0){
-     var that = this;
-     const db = wx.cloud.database();
-     db.collection('book').where({
-       collegeId: '1'
-     }).get({
-       success: function (res) {
-         //console.log(res.data);
-         if (res.data.length == 0) {
-           that.setData({
-             ishaveChild: false
-           })
-         } else {
-           that.setData({
-             children: res.data,
-             ishaveChild: true
-           })
-         }
-       }
-     })
-   }
-    if (index==1){
+    if (that.data.TabCur == 0) {
+      var that = this;
+      const db = wx.cloud.database();
+      db.collection('book').where({
+        collegeId: '1'
+      }).get({
+        success: function (res) {
+          //console.log(res.data);
+          if (res.data.length == 0) {
+            that.setData({
+              ishaveChild: false
+            })
+          } else {
+            that.setData({
+              children: res.data,
+              ishaveChild: true
+            })
+          }
+        }
+      })
+    }
+    if (that.data.TabCur == 1) {
       var that = this;
       const db = wx.cloud.database();
       db.collection('book').where({
@@ -138,22 +72,22 @@ Page({
       }).get({
         success: function (res) {
           console.log(res.data.length);
-          if (res.data.length==0){
+          if (res.data.length == 0) {
             that.setData({
-              ishaveChild:false
+              ishaveChild: false
             })
-          }else{
+          } else {
             that.setData({
               children: res.data,
               ishaveChild: true
             })
           }
-          
+
 
         }
       })
     }
-    if (index == 2) {
+    if (that.data.TabCur == 2) {
       var that = this;
       const db = wx.cloud.database();
       db.collection('book').where({
@@ -175,7 +109,7 @@ Page({
         }
       })
     }
-    if (index == 3) {
+    if (that.data.TabCur == 3) {
       var that = this;
       const db = wx.cloud.database();
       db.collection('book').where({
@@ -197,7 +131,7 @@ Page({
         }
       })
     }
-    if (index == 4) {
+    if (that.data.TabCur == 4) {
       var that = this;
       const db = wx.cloud.database();
       db.collection('book').where({
@@ -219,7 +153,7 @@ Page({
         }
       })
     }
-    if (index == 5) {
+    if (that.data.TabCur == 5) {
       var that = this;
       const db = wx.cloud.database();
       db.collection('book').where({
@@ -241,7 +175,7 @@ Page({
         }
       })
     }
-    if (index == 6) {
+    if (that.data.TabCur == 6) {
       var that = this;
       const db = wx.cloud.database();
       db.collection('book').where({
@@ -263,8 +197,8 @@ Page({
         }
       })
     }
-    
   },
+  //跳转详情页
   Jumpdetail:function(event){
     //let str = JSON.stringify(event.currentTarget.dataset.children);
     var id=event.currentTarget.dataset.id
@@ -276,6 +210,24 @@ Page({
         
       }
     })
+  },
+  //跳转地图
+  goToaddress:function(event){
+    var that=this;
+    var addressName = event.currentTarget.dataset.addressname;
+    var latitude = event.currentTarget.dataset.latitude;
+    var longitude = event.currentTarget.dataset.longitude;
+    let plugin = requirePlugin('route-plan');
+    let key = '4CQBZ-2QQ6F-NEIJX-JZY44-TKCSZ-N6BXP';  //使用在腾讯位置服务申请的key
+    let referer = 'demo';   //调用插件的app的名称
+    let endPoint = JSON.stringify({  //终点
+      'name': addressName,
+      'latitude': latitude,
+      'longitude': longitude
+    });
+    wx.navigateTo({
+      url: 'plugin://route-plan/route-plan?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+    });
   },
   /**
    * 生命周期函数--监听页面加载
