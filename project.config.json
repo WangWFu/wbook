@@ -10,7 +10,7 @@
 		"autoAudits": false,
 		"checkInvalidKey": true
 	},
-	"appid": "wx9ff42dddf6423735",
+	"appid": "",
 	"projectname": "book",
 	"libVersion": "2.7.2",
 	"simulatorType": "wechat",
